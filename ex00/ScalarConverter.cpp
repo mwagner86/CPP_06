@@ -1,7 +1,14 @@
-//
-// Created by max on 7/12/23.
-//
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScalarConverter.cpp                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mwagner <mwagner@student.42wolfsburg.de>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/13 16:24:02 by mwagner           #+#    #+#             */
+/*   Updated: 2023/07/13 16:24:12 by mwagner          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 
@@ -124,7 +131,6 @@ void ScalarConverter::handleDouble(double double_value, float float_value)
 		printDouble("infinite");
 		return;
 	}
-	// Check if the double value is printable
 	// Check if the double value is printable
 	int int_value = static_cast<int>(double_value);
 	char buffer[42];
