@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EX00_COLORS_H
-# define EX00_COLORS_H
+#ifndef EX02_COLORS_H
+# define EX02_COLORS_H
 
 #define COLOR_DEFAULT "\033[0m"
 #define COLOR_RED "\033[31m"
@@ -28,4 +28,4 @@
 #  define VERBOSE 0
 # endif
 
-#endif // EX00_COLORS_H
+#endif // EX03_COLORS_H
