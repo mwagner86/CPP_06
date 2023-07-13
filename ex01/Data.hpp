@@ -8,3 +8,4 @@ typedef	struct s_Data
 	float		f;
 	double		d;
 }				Data;
+
