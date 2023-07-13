@@ -21,6 +21,7 @@ NAME 		:= identify_real_type
 CC 		:= c++
 CFLAGS 		:= -Wall -Werror -Wextra -std=c++98
 SRC 		:=	main.cpp \
+				Base.cpp \
 
 
 all: $(NAME)
