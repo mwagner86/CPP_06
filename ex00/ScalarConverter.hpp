@@ -20,6 +20,7 @@
 #include <climits>
 #include <cstdio>
 #include <cstring>
+#include <sstream>
 #include "colors.hpp"
 
 class ScalarConverter

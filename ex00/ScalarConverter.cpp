@@ -26,7 +26,7 @@ ScalarConverter::ScalarConverter(const ScalarConverter &src) {
 ScalarConverter &	ScalarConverter::operator=(ScalarConverter const &rhs) {
 	if (VERBOSE)
 		std::cout << "Assignment operator overload called" << std::endl;
-	if (this != &rhs)
+	if (this != &rhs) // NO relevant data members from rhs to this
 		(void) rhs;
 	return (*this);
 };
@@ -114,8 +114,7 @@ void ScalarConverter::handleChar(char c)
 void ScalarConverter::handleDouble(double double_value, float float_value)
 {
 	// (void) float_value;
-	if (std::isnan(double_value) || std::isnan(float_value))
-	{
+	if (std::isnan(double_value) || std::isnan(float_value)) {
 		printChar("Non displayable");
 		printInt("Non displayable");
 		printFloat("nanf");
@@ -123,26 +122,27 @@ void ScalarConverter::handleDouble(double double_value, float float_value)
 		return;
 	}
 
-	if (std::isinf(double_value) || std::isinf(float_value))
-	{
+	if (std::isinf(double_value) || std::isinf(float_value)) {
 		printChar("Non displayable");
 		printInt("Non displayable");
 		printFloat("infinite");
 		printDouble("infinite");
 		return;
 	}
-	// Check if the double value is printable
+	// Check if the double value is printable, revert back to int to use isprint and string.length
 	int int_value = static_cast<int>(double_value);
-	char buffer[42];
-	std::sprintf(buffer, "%d", int_value);
-	if (std::strlen(buffer) > 7)	{
+	std::ostringstream oss;
+	oss << int_value;
+	std::string int_string = oss.str();
+
+	if (int_string.length() > 3) {
 		printChar("Out of printable range");
 	}
-	else if (std::isprint(int_value))	{
-		printChar(std::string(1, static_cast<char>(double_value)));
+	else if (std::isprint(int_value)) {
+		std::string char_string(1, static_cast<char>(double_value));
+		printChar(char_string);
 	}
-	else
-	{
+	else {
 		printChar("Non displayable");
 	}
 	// Check for overflow in int and float range
