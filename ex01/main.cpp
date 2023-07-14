@@ -36,8 +36,8 @@ int main(void) {
 
 
 	std::cout << LIGHTBLUE << "* Function call to deserialize the rawData *" << COLOR_DEFAULT << std::endl;
-	Data *NewStruct = Serializer::deserialize(rawData);
-	std::cout << COLOR_RED << "Pointer Address after deserialization: " << &OriginalStruct << COLOR_DEFAULT << std::endl;
+	Data* NewStruct = Serializer::deserialize(rawData);
+	std::cout << COLOR_RED << "Pointer Address after deserialization: " << NewStruct << COLOR_DEFAULT << std::endl;
 	std::cout << "New Struct values:" << std::endl;
 	std::cout << COLOR_CYAN << "string : "  << COLOR_DEFAULT << NewStruct->string << std::endl;
 	std::cout << COLOR_YELLOW << "char   : " << COLOR_DEFAULT << NewStruct->c  << std::endl;
