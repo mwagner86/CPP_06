@@ -26,14 +26,14 @@
 class ScalarConverter
 {
 public:
+	static void convert(const std::string& input);
+
+private:
 	ScalarConverter();
 	ScalarConverter(const ScalarConverter & src);
 	ScalarConverter & operator=(const ScalarConverter & rhs);
 	~ScalarConverter();
 
-	static void convert(const std::string& input);
-
-private:
 	static int handlePseudoLiterals(const std::string& input);
 	static void handleChar(char c);
 	static void handleDouble(double double_value, float float_value);
